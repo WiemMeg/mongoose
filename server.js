@@ -1,0 +1,30 @@
+const express = require("express");
+const app = express();
+const port = 5000;
+const connectdb = require("./config/dbconnect");
+const create = require("./task/save");
+const createmany = require("./task/createmany");
+const findusers = require("./task/findusers");
+const findfood = require("./task/findfood");
+const findbyid = require("./task/findbyid");
+const edit = require("./task/edit");
+const update = require("./task/update");
+const deleteuser = require("./task/delete");
+const deleteusers = require("./task/deletemany");
+const queryChain = require("./task/searchquery");
+require("dotenv").config();
+
+connectdb();
+//deleteuser();
+//deleteusers();
+//create();
+//createmany();
+//findusers();
+//findfood();
+//findbyid();
+//edit();
+//update();
+queryChain();
+app.listen(port, () => {
+  console.log("server is running on port 5000");
+});
